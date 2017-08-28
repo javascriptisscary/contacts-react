@@ -46,6 +46,12 @@ class ListContacts extends Component {
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <a
+            href="#create"
+            onClick={this.props.onNavigate}
+            className="add-contact"
+            >Add Contact
+          </a>
         </div>
 
         {showingContacts.length !== contacts.length && (
@@ -62,8 +68,8 @@ class ListContacts extends Component {
                 backgroundImage: `url(${contact.avatarURL})`
               }}/>
               <div className='contact-details'>
-              <p>{contact.name}</p>
-              <p>{contact.email}</p>
+                <p>{contact.name}</p>
+                <p>{contact.email}</p>
               </div>
               <button onClick={() => onDeleteContact(contact)} className='contact-remove'>
                 Remove
